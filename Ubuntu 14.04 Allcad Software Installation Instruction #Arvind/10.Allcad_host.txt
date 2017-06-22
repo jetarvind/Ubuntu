@@ -1,8 +1,0 @@
-127.0.0.1 local.ia11.allcad.home
-127.0.0.1 local.risk.allcad.home
-127.0.0.1 local.proman.allcad.home
-127.0.0.1 local.hrms.allcad.home
-127.0.0.1 local.service.allcad.home
-127.0.0.1 local.iafin.allcad.home
-127.0.0.1 local.pos.allcad.home
-127.0.1.1 local.web.service.allcad.home
