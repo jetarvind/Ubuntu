@@ -1,0 +1,15 @@
+allcad@pc073:~$ cat /etc/apache2/workers.properties 
+# configure jk-status
+worker.list=jk-status
+worker.jk-status.type=status
+worker.jk-status.read_only=true
+# configure jk-manager
+worker.list=jk-manager
+worker.jk-manager.type=status
+worker.balance1.type=lb
+# Define 1 real worker using ajp13 
+worker.list=worker1
+#Set properties for worker (ajp13) 
+worker.worker1.type=ajp13 
+worker.worker1.host=localhost
+worker.worker1.port=8009

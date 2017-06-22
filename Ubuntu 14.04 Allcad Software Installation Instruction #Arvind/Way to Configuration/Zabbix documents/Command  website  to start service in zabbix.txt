@@ -1,0 +1,12 @@
+https://www.zabbix.com/documentation/3.2/manual/installation/install_from_packages/server_installation_with_mysql
+
+To restart zabbix server
+
+service zabbix-server restart
+
+To restart webservice
+
+service https restart
+
+
+sudo service zabbix-agent restart

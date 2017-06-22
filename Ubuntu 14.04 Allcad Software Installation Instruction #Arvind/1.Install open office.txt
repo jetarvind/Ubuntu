@@ -1,0 +1,32 @@
+Note !!!
+Before install open office first remove library office from below command
+#sudo apt-get remove --purge libreoffice* libexttextcat-data* && sudo apt-get autoremove
+
+Step 1
+Download open office from this below command
+#sudo wget http://sourceforge.net/projects/openofficeorg.mirror/files/4.0.0/binaries/en-US/Apache_OpenOffice_4.0.0_Linux_x86-64_install-deb_en-US.tar.gz
+
+Step 2
+Goto download folder or your extrated folderand type below command
+#tar -xvf Apache_OpenOffice*.tar.gz
+
+Step 3
+Note !!!
+Type bleow command in the location of extraded folder.
+#sudo dpkg -i en-US/DEBS/*.deb
+#sudo dpkg -i en-US/DEBS/desktop-integration/*.deb
+
+Here we done restart and just goto search and use open office
+
+
+
+To uninstall open office from Ubunut 14.04
+
+Step 1
+If it's listed, as it is, then fire this:
+sudo dpkg -r openoffice
+
+Then finally...
+sudo apt-get remove --purge openoffice*
+
+

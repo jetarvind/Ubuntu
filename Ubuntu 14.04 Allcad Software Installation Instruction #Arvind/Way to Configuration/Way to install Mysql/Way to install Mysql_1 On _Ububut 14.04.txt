@@ -1,0 +1,43 @@
+Way to install Mysql on Ubuntu 14.04
+Follow bellow websites or type command
+
+https://www.linode.com/docs/databases/mysql/install-mysql-on-ubuntu-14-04
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04
+			
+
+$ sudo apt-get update
+
+Step 1 — Installing MySQL "Installing MySQL 5.5 or 5.6"
+
+$ sudo apt-get install mysql-server or $ sudo apt-get install mysql-server-5.5 or $ sudo apt-get install mysql-server-5.6
+$ sudo mysql_secure_installation
+$ sudo mysql_install_db
+
+
+Step 2 — Configuring MySQL
+
+
+$ sudo mysql_secure_installation
+
+You'll see some output like this:
+
+Output
+mysql  Ver 14.14 Distrib 5.7.11, for Linux (x86_64) using  EditLine wrapper
+
+
+$ sudo mysql_install_db
+
+
+Step 3 — Testing MySQL
+
+$ service mysql status
+
+
+If MySQL isn't running, you can start it with sudo service mysql start.
+
+For an additional check, you can try connecting to the database using the mysqladmin tool, which is a client that lets you run administrative commands. For example, this command says to connect to MySQL as root (-u root), prompt for a password (-p), and return the version.
+
+$ mysqladmin -p -u root version
+
+
+

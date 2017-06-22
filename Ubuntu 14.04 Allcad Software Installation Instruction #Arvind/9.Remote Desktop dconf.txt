@@ -1,0 +1,30 @@
+To install software that allow to remote access your computer desktop of ubuntu 14.04 !!dconf-tools!!
+Step 1
+Install
+#sudo apt-get install dconf-tools
+
+Step 2
+Configure
+Search dconf and in deconf box popup
+Chose below steps !!
+org
+   gnome
+        desktop
+               remote-access
+
+uncheck all and again check on enable and close..
+
+Step 3
+goto terminal and type below command
+#sudo vino-pereference
+and set you allow sharing and your security..
+
+
+
+To remove the dconf-tools following command is used:
+#sudo apt-get remove  dconf-tools
+
+Following command is used to remove the dconf-tools package along with its dependencies:
+#sudo apt-get remove --auto-remove dconf-tools
+#sudo apt-get purge dconf-tools
+#sudo apt-get purge --auto-remove dconf-tools

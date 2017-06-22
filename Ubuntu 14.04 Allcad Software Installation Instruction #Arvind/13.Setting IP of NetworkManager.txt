@@ -1,0 +1,29 @@
+#sudo nano /etc/NetworkManager/system-connections/Wired\ connection\ 1 
+[802-3-ethernet]
+duplex=full
+mac-address=00:19:D1:AB:10:FA
+
+[connection]
+id=Wired connection 1
+uuid=896c15c0-4542-4443-8153-72d1c1211849
+type=802-3-ethernet
+timestamp=1484646948
+
+[ipv6]
+method=auto
+
+[ipv4]
+method=manual
+dns=192.168.5.251;192.168.5.234;
+address1=192.168.5.78/24,192.168.5.1
+#address2=192.168.6.78/24,0.0.0.0
+#address3=192.168.7.78/24,0.0.0.0
+#end
+
+
+Example
+
+dns=192.168.5.251;192.168.5.234;     (Primary_DNS;Secondary_DNS)
+address1=192.168.5.78/24,192.168.5.1 (IP/Netmask,Gateway)
+address2=192.168.6.78/24,0.0.0.0    (IP/Netmask,Gateway)
+address3=192.168.7.78/24,0.0.0.0    (IP/Netmask,Gateway)

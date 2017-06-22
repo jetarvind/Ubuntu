@@ -1,0 +1,116 @@
+
+				----------------------------------------------------------------------------
+				Bakup/Main server 192.168.5.227        |        restore server 13.71.117.185
+				----------------------------------------------------------------------------
+
+(192.168.5.227)											------------------------------------------							
+----------------------------------------------------------------------------			Bakup/Main server 192.168.5.227
+Create Backups of an Entire DBMS Using Copies of the MySQL Data Directory
+----------------------------------------------------------------------------			#/etc/init.d/mysql stop
+												#find / -name mysql
+STEP 1												#mkdir /opt/backup		
+----------------------------------------------------------------------------			#cp -R /var/lib/mysql/* /opt/backup		
+Stop you mysql by below given commands 								#tar -zcvf backup.tar /opt/backup
+----------------------------------------------------------------------------			#/etc/init.d/mysql start
+#/etc/init.d/mysql stop										-------------------------------			
+
+												-------------------------------										
+STEP 2												restore server 13.71.117.185
+----------------------------------------------------------------------------		
+Use below commands to find out where is your mysql main directory like mine			#/etc/init.d/mysql stop
+is here /var/lib/mysql										#mv /var/lib/mysq /var/lib/mysqlold
+----------------------------------------------------------------------------			#mkdir /var/lib/mysql
+#find / -name mysql										#chown -R mysql:mysql /var/lib/mysql	
+												Extract your tar file and 	
+												#sudo mv /opt/backup/* /var/libe/mysql
+STEP 3												#/etc/init.d/mysql start			
+-----------------------------------------------------------------------------			--------------------------------------------					
+Create Directory where you want to keep backup file.. like mine /opt/backup
+-----------------------------------------------------------------------------
+#mkdir /opt/backup
+
+STEP 4
+-----------------------------------------------------------------------------
+Use below command to copy your mysql fies..
+-----------------------------------------------------------------------------
+#cp -R /var/lib/mysql/* /opt/backup
+
+STEP 5
+-----------------------------------------------------------------------------
+Make tar/zip of your backup files
+-----------------------------------------------------------------------------
+#tar -zcvf backup.tar /opt/backup
+
+STEP 6
+-----------------------------------------------------------------------------
+Copy your tar file on (192.168.5.228) In /opt directory 
+-----------------------------------------------------------------------------
+
+
+(192.168.5.228)
+STEP 1
+-----------------------------------------------------------------------------
+First change (mysql to mysqlold )your primary /var/lib/mysql 
+-----------------------------------------------------------------------------
+#mv /var/lib/mysq /var/lib/mysqlold
+
+STEP 2
+-----------------------------------------------------------------------------
+Creat new directory in /var/lib/mysql
+-----------------------------------------------------------------------------
+#mkdir /var/lib/mysql
+
+STEP 3
+-----------------------------------------------------------------------------
+Give permission on your direcroty /var/lib/mysql
+-----------------------------------------------------------------------------
+#chown -R mysql:mysql /var/lib/mysql
+
+STEP 4
+-----------------------------------------------------------------------------
+Past your backuped file here /var/libe/mysql after extract your tar file
+-----------------------------------------------------------------------------
+#mv /opt/backup/* /var/libe/mysql
+
+here we done just start your mysql
+#/etc/init.d/mysql start
+
+#Arvind
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Using mysqldume
+
+
+Backup all databases....
+#mysqldump --all-databases > back-$( date '+%Y-%m-%d_%H-%M-%S' ).sql -u root -p
+or 
+#mysqldump --all-databases > back.sql -u root -p
+
+
+Restore all databaes...
+#mysql -u root -p < 1266861650-backup-all.sql
+
+
+
+

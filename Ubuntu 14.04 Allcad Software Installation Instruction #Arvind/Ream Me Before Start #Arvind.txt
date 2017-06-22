@@ -1,0 +1,33 @@
+Your computer usernameand password is 
+username user**
+password 123456
+
+In your computer install below software
+
+Java 1.8
+open office 4
+workbench
+node | npm
+sublime/eclips
+tomcat .............file location /home/user34/software/
+xamp
+vlc
+chrom
+smartgit
+git
+maven
+hipchat
+pinta...(paint tool)
+
+Your all installed program location accept xamp
+/home/user34/software/
+
+
+xamp location /opt/lampp/lampp
+
+here command to start/stop your xamp
+sudo /opt/lampp/lampp start/stop
+password 123456
+
+And if you required onther software plse let me know or Ravi sir..
+thank you

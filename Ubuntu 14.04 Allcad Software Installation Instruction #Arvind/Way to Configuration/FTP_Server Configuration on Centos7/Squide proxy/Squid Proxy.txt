@@ -1,0 +1,53 @@
+
+How can I allow some spacial client
+ 
+
+acl special_client src 10.1.2.3
+acl special_url url_regex ^http://www.squid-cache.org/Doc/FAQ/$
+http_access allow special_client special_url
+http_access deny special_url
+
+To know more ---------------\
+http://wiki.squid-cache.org/SquidFaq/SquidAcl#Using_Proxy_Authentication
+
+For specific websites
+
+acl GOOD dst 10.0.0.1
+http_access allow GOOD
+http_access deny all
+
+
+
+
+
+
+how do I configure Squid not to cache a specific server?   "cache: Defines responses that should not be cached." 
+
+acl someserver dstdomain .someserver.com
+cache deny someserver
+
+
+
+
+How do I allow my clients to use the cache?
+Define an ACL that corresponds to your client's IP addresses. For example: 
+
+
+acl myclients src 172.16.5.0/24
+http_access allow myclients
+
+
+
+Another way is to deny access to specific servers
+
+acl Cooking2 dstdomain www.gourmet-chef.com
+http_access deny Cooking2
+http_access allow all
+
+
+
+
+
+
+
+

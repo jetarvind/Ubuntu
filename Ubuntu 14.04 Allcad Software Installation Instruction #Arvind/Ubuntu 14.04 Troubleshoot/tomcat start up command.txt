@@ -1,0 +1,60 @@
+#mount -t cifs //192.168.5.240/host /opt -o user=admin
+#mount -t cifs //192.168.5.240/hostmanagement /hostmanagement -o user=admin
+#mount -t cifs //192.168.5.240/document_server /document_server -o user=admin
+
+#mount -t cifs //192.168.5.210/hostdesigner /hostdesigner -o user=administrator@allcad.home
+
+
+#cd /opt/tomcat1/bin/
+#./startup.sh
+
+#cd /opt/tomcat5/bin/
+#./startup.sh
+
+#cd /hostmanagement/tomcat2/bin/
+#./startup.sh
+
+#cd /hostdesigner/tomcat3/bin/
+#./startup.sh
+
+#cd /document_server/tomcat4/bin/
+#./startup.sh
+
+
+For 192.168.5.220
+#mount -t cifs //192.168.5.210/iAccountant_ui_data /var/www/html/iAccountant_data -o user=administrator@allcad.home
+#mount -t cifs //192.168.5.210/cdn_data /var/www/html/cdn -o user=administrator@allcad.home
+
+For 192.168.5.228 (iAccountant.old)
+#mount -t cifs //192.168.5.210/ia10 /var/www/iaccountant/ia10 -o user=administrator@allcad.home
+
+
+For 192.168.5.228 (iAccountant_new)
+#mount -t cifs //192.168.5.210/ia11 /var/www/iaccountant/dev -o user=administrator@allcad.home
+
+For 192.168.5.227
+#mount -t cifs //192.168.5.210/risk10 /var/www/risk/dev -o user=administrator@allcad.home
+
+For 192.168.5.226
+#mount -t cifs //192.168.5.210/proman10 /var/www/proman/dev -o user=administrator@allcad.home
+
+For 192.168.5.209
+#mount -t cifs //192.168.5.210/hrms10 /var/www/hrms/dev -o user=administrator@allcad.home
+
+For 192.168.5.208
+#mount -t cifs //192.168.5.210/service10 /var/www/service/dev -o user=administrator@allcad.home
+
+For 192.168.5.207
+#mount -t cifs //192.168.5.210/iafin10 /var/www/iafin/dev -o user=administrator@allcad.home
+
+For 192.168.5.206
+#mount -t cifs //192.168.5.210/pos10 /var/www/pos/dev -o user=administrator@allcad.home
+
+
+#adduser vikas
+#usermod -a -G tomcat7,mysql,www-data,root vikas
+
+
+#cd /etc/sudoers.d/
+#cat allcad
+#vim allcad

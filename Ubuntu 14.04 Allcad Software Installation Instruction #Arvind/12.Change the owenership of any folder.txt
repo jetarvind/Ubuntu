@@ -1,0 +1,14 @@
+
+To change the owenership of any folder for domain user !!
+here i'm changing owenership of my "lampp" folder... the new owener is ALLCAD\\user43
+#sudo chown -R ALLCAD\\user43:root /opt/lampp/
+
+Expl...
+sudo chown -R allcad\\user43:root /opt/lampp/
+
+
+Give full permission of any folder for all
+#sudo chmod 777 /your folder location/ -R
+
+Expl..
+sudo chmod 777 /opt/lampp/ -R

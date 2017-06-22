@@ -1,0 +1,19 @@
+--------------------------------------------------------------------------
+Hello This is Arvind							 
+--------------------------------------------------------------------------
+
+
+
+Here below Setting for access your Jconsole Remotaly
+
+
+
+--------------------------------------------------------------------------
+Go to your /apache-tomcat-8.5.9/bin/
+now add below line in catalina.sh or setenv.sh file using below command
+--------------------------------------------------------------------------
+
+#nano setenv.sh or catalina.sh
+
+JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9020 -Dcom.sun.management.jmxremote.local.only=false"
+JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=YourIPAddres"

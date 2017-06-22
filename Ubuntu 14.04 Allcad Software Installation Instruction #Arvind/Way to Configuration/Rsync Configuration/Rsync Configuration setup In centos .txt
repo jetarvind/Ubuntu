@@ -1,0 +1,34 @@
+								ALLCAD 
+"Rsysnc" In CentOS for "GIT Backup"
+ 
+
+Make tar file any location
+
+#tar -zcvf /home/zabbix/Desktop/test1.tar /home/zabbix/Desktop/test/
+
+
+
+Using "rsysnc" for making incrimantal backup...
+
+#rsync -av --delete /home/zabbix/Desktop/test1.tar/ /home/zabbix/Desktop/test2/
+	
+Sorce Data 				"/home/zabbix/Desktop/test1.tar/"
+Destination Data inside test2 folder 	"/home/zabbix/Desktop/test2/
+
+
+
+
+For Auto sechedul type below command insdie Crontab -e
+
+# crontab -e 
+
+* * * * * tar -zcvf /home/zabbix/Desktop/test1.tar /home/zabbix/Desktop/test
+* * * * * rsync -av --delete /home/zabbix/Desktop/test/ /home/zabbix/Desktop/test2/
+* * * * * rsync -av --delete -e ssh /opt/tomcat/tomcat1/webapps allcad@192.168.5.72:/home/user22/software
+
+note : should be 777 permission on your destination folder
+Example 
+* * * * * = Minute Hour Day Month Year
+Direct Command 
+#sudo rsync -av --delete -e ssh /opt/tomcat/tomcat1/webapps allcad@192.168.5.72:/home/user22/software/
+

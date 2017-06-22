@@ -1,0 +1,9 @@
+
+#apt-get update
+#apt-get install git-core
+#git -version
+
+root@pc034:/home/user34# git config --global core.editor vim
+root@pc034:/home/user34# git config --global merge.tool vimdiff
+root@pc034:/home/user34# git config --list
+

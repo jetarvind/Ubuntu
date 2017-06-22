@@ -1,0 +1,40 @@
+--------------------------------------------------------------------------
+Step 1
+--------------------------------------------------------------------------
+
+Diabel Copy_Past and Drive Redirection 
+
+Navigate to: gpedit \ Computer Configuration \ Administrative Templates \ Windows Components \ Remote Desktop Services \ Remote Desktop Session Hosts \ Device and Resource Redirection \ Do not allow clipboard redirection
+
+And Enablee it...
+
+Navigate to: gpedit \ Computer Configuration \ Administrative Templates \ Windows Components \ Remote Desktop Services \ Remote Desktop Session Hosts \ Device and Resource Redirection \Drive redirection
+
+And Enable it..
+
+--------------------------------------------------------------------------
+Step 2
+--------------------------------------------------------------------------
+
+Make firewall Outbond policy for user dissalowed to access other network....
+
+Goto ~ Run -type ~----firewall.cpl----advance setting----Outbound Rules----Rightclick----new rule----custom----next...----Choes your ip range----click next and done...
+
+--------------------------------------------------------------------------
+Step 3
+--------------------------------------------------------------------------
+
+For disallowed access network over ip address 
+
+Goto ~Run -type ~-----ncpa.cpl------network adapter-----uncheck ipver6,Client for Microsoft, File and printer sharing....
+
+--------------------------------------------------------------------------
+Step 3
+--------------------------------------------------------------------------
+
+Use your "UniversalTermsrvPatch" for multiple user login on remotely on windows 7
+
+------------------------------------------------------------------------------------------------
+step
+
+

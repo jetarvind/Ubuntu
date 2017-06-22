@@ -1,0 +1,21 @@
+
+install remmina-plugin-vnc
+
+#sudo apt-get update
+#sudo apt-get install remmina-plugin-vnc
+
+
+
+
+
+
+
+
+Uninstall remmina-plugin-vnc
+
+#udo apt-get remove remmina-plugin-vnc
+#sudo apt-get purge remmina-plugin-vnc
+#sudo apt-get remove --auto-remove remmina-plugin-vnc
+#sudo apt-get purge --auto-remove remmina-plugin-vnc
+
+

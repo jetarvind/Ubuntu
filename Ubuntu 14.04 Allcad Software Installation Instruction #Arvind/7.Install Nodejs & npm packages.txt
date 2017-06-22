@@ -1,0 +1,55 @@
+
+Install nodjs and npm
+Step 2
+#sudo apt-get update
+#curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+#sudo apt-get install nodejs 
+#sudo apt-get install build-essential
+(Opt)#sudo ln -s /usr/bin/nodejs /usr/bin/node
+(Opt)#sudo apt-get install npm
+
+Step 2
+For installing locally from local user only !
+$npm install grunt
+$npm install grunt-cli
+$npm install karma
+$npm install jasmine
+
+For install globally from sudo user only !
+#sudo npm install -g grunt
+#sudo npm install -g grunt-cli
+#sudo npm install -g karma
+#sudo npm install -g jasmine
+
+
+
+To uninstall node and npm 
+Step 1
+#sudo rm -rf /usr/local/lib/node
+#sudo rm -rf /usr/local/lib/node_modules
+
+Step 2
+#sudo apt-get remove nodejs
+#sudo apt-get remove npm
+
+Then go to /etc/apt/sources.list.d and remove any node list if you have. Then do a
+
+#sudo apt-get update
+Check for any .npm or .node folder in your home folder and delete those.
+
+If you type it show in any node folder ........... In computer!
+#which node
+
+
+
+
+!!! 
+#sudo apt-get install -y curl apt-transport-https ca-certificates &&
+  curl --fail -ssL -o setup-nodejs https://deb.nodesource.com/setup_6.x &&
+  sudo bash setup-nodejs &&
+  sudo apt-get install -y nodejs build-essential
+
+
+
+
+

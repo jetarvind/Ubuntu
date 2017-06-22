@@ -1,0 +1,5 @@
+sudo apt-get update
+sudo apt-get install squid
+nano /etc/squid3/squid.conf
+
+

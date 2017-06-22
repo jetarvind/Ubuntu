@@ -1,0 +1,35 @@
+Way 1 !!!!
+Step 1 
+#sudo add-apt-repository ppa:eugenesan/ppa
+#sudo apt-get update
+#sudo apt-get install smartgit
+
+
+
+Via tar file !!!
+tar -xzf archive-name.tar.gz
+cd archive-name
+./configure
+make
+sudo make install
+
+
+
+To uninstall 
+#sudo apt-get remove smartgithg
+
+
+
+
+For more info.
+http://www.kvcodes.com/2016/03/install-uninstall-smartgit-ubuntu/
+
+
+
+
+Way 2 !!!!
+
+#sudo apt-get install git-gui
+
+
+

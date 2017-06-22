@@ -1,0 +1,21 @@
+All_Steps blow !!!
+Download .deb file of workbench
+#sudo wget http://dev.mysql.com/get/mysql-apt-config_0.3.5-1ubuntu14.04_all.deb
+#sudo dpkg -i mysql-apt-config_0.3.5-1ubuntu14.04_all.deb
+#sudo apt-get update -y
+#sudo apt-get install mysql-workbench-community -y
+
+Work on gui and check
+
+mysql-workbench --version
+
+
+
+
+To uninstall !!
+
+
+#sudo apt-get remove  mysql-workbench
+#sudo apt-get remove --auto-remove mysql-workbench-community
+#sudo apt-get purge mysql-workbench
+#sudo apt-get purge --auto-remove mysql-workbench

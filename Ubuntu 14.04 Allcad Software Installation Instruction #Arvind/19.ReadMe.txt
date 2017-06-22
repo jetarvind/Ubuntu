@@ -1,0 +1,7 @@
+To install
+
+!PINTA!VLC!CHROM!DCONF!KAZAM!SUBLIME!SKYPE!
+
+You can install from your ubuntu software plateform.
+
+or use .deb file just download from sorce..

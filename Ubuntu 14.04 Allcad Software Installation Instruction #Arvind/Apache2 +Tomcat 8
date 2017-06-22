@@ -1,0 +1,212 @@
+Installing Tomcat 7 and Apache2 with mod_jk on Ubuntu 14.04
+and connect our tomcat with apache.......
+
+-------------------------------------------------------------------------
+Step1
+-------------------------------------------------------------------------
+
+ Installing Apache
+
+#sudo apt-get install apache2
+
+Test the installation from the browser using 
+http://localhost/
+
+
+-------------------------------------------------------------------------
+Step2
+-------------------------------------------------------------------------
+Put your tomcat setup in /opt/
+
+Create a test application for tomcat.
+#cd /opt/tomcat/tomcat1/webapps
+#sudo mkdir tomcat
+
+now past here all your ROOT files. 
+
+-----------------------------------------------------------------------
+Step3
+-------------------------------------------------------------------------
+Test the installation from the browser using 
+
+http://localhost:8080/tomcat
+
+
+-------------------------------------------------------------------------
+Step4
+-------------------------------------------------------------------------
+Installing and configuring mod_jk 
+
+#sudo apt-get install libapache2-mod-jk
+
+First lets enable the redirect AGP Port on Tomcat 
+
+#sudo nano /etc/tomcat7/conf/server.xml
+
+and uncomment the following line
+<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
+
+-------------------------------------------------------------------------
+Step5
+-------------------------------------------------------------------------
+Now we will create our workers.properties file for Apache. 
+
+sudo nano /etc/apache2/workers.properties
+
+paste the text
+
+# configure jk-status
+worker.list=jk-status
+worker.jk-status.type=status
+worker.jk-status.read_only=true
+# configure jk-manager
+worker.list=jk-manager
+worker.jk-manager.type=status
+worker.balance1.type=lb
+# Define 1 real worker using ajp13 
+worker.list=worker1
+#Set properties for worker (ajp13) 
+worker.worker1.type=ajp13 
+worker.worker1.host=localhost
+worker.worker1.port=8009
+
+-------------------------------------------------------------------------
+Step5
+-------------------------------------------------------------------------
+
+Now to ask Apache to use this worker 
+
+#sudo nano /etc/apache2/mods-available/jk.conf
+
+change the JkWorkersFile property to /etc/apache2/workers.properties 
+
+Finally to configure the URL Apache should pass through the Tomcat 
+
+-------------------------------------------------------------------------
+Step5
+-------------------------------------------------------------------------
+
+Creat test webfile for front show
+
+#mkdir /var/www/arv
+#cd /var/www/arv
+#sudo nano intex.jsp
+
+<HTML>
+ <HEAD>
+  <TITLE>Good Morning</TITLE>
+ </HEAD>
+ <BODY>
+  <H1>Good Morning</H1>  
+  Today is: <%= new java.util.Date().toString() %>
+ </BODY>
+</HTML>
+
+
+-------------------------------------------------------------------------
+Step6
+-------------------------------------------------------------------------
+Now creat your conf file like arv.allcad.home.conf by uning below command
+#cp /etc/apache2/sites-available/000-default /etc/apache2/sites-availabe/arv.allcad.home.conf
+#sudo nano /etc/apache2/sites-available/arv.allcad.conf
+
+or
+
+#sudo nano /etc/apache2/sites-enabled/000-default 
+
+and add the following line in your configurtation
+
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	ServerName arv.allcad.home
+	DocumentRoot /var/www/arv
+	<Directory  /var/www/arv/>
+		Options Indexes FollowSymLinks ExecCGI Includes
+		AllowOverride All
+		#Require all granted
+		DirectoryIndex index.jsp
+#or
+#Your given path for Document root.....
+#and
+
+
+	ProxyPassMatch ^/manager(.*)$ ajp://localhost:8009/manager/$1
+	ProxyPassMatch ^/tomcat(.*)$ ajp://localhost:8009/tomcat/$1
+	ProxyPassMatch ^/host-manager(.*)$ ajp://localhost:8009/host-manager/$1
+
+</VirtualHost *:80>
+
+
+
+Now, restart the servers
+
+-------------------------------------------------------------------------
+Step7
+-------------------------------------------------------------------------
+Now enable your conf file
+#sudo a2ensite arv.allcad.home.conf
+
+and enable your proxy
+
+#sudo a2enmod proxy_ajp.load
+-------------------------------------------------------------------------
+Step7
+-------------------------------------------------------------------------
+
+Now, restart the servers
+
+restart your tomcat and restart your apache
+
+
+and test with 
+http://localhost/tomcat
+
+it should work similarly to 
+
+http://localhost:8080/tomcat
+
+
+
+
+-------------------------------------------------------------------------
+Step8
+-------------------------------------------------------------------------
+
+For access your tomcat over network
+
+
+just goto /opt/tomcat/tomcat1/webapps/manager/META-INF. and comment below line
+
+#nano context.xml
+
+<Context antiResourceLocking="false" privileged="true" >
+
+<!--
+<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+</Context>
+
+
+
+#End
+
+Allcad Services Pvt Limited
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

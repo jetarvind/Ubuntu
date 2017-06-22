@@ -1,0 +1,31 @@
+to reset cache
+
+#react-native start --reset-cache
+
+nosuch file or dir
+#sudo apt-get install lib32stdc++6 lib32z1
+
+
+
+
+
+
+export ANDROID_HOME=${HOME}/androidsdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+
+
+
+
+ERROR  A non-recoverable condition has triggered.  Watchman needs your help!
+The triggering condition was at timestamp=1486443054: inotify-add-watch(/home/user42/Desktop/allcadpro3/ios) -> The user limit on the total number of inotify watches was reached; increase the fs.inotify.max_user_watches sysctl
+All requests will continue to fail with this message until you resolve
+the underlying problem.  You will find more information on fixing this at
+https://facebook.github.io/watchman/docs/troubleshooting.html#poison-inotify-add-watch
+
+
+
+echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
+echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
+echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_instances

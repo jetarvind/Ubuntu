@@ -1,0 +1,10 @@
+To Disallow you Media/Flash/Pendrive !!
+#sudo root
+#chmod 000 /media/
+here we done,disallow your pendrive/flash media
+
+To allow you Media/Flash/Pendrive !!
+
+#sudo root
+#chmod 777 /media/
+

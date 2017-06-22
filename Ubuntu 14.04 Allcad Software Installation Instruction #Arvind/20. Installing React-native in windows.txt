@@ -1,0 +1,15 @@
+Step to Install React-Native after install latest JAVA,NODE,NPM AND PYTHON
+#sudo apt-get install python-dev
+#sudo apt-get install automake
+#sudo apt-get install autoconf
+#git clone https://github.com/facebook/watchman.git
+#cd watchmam
+#git checkout v4.5.0
+#./autogen.sh
+#su 
+#./configure
+#make
+#sudo make install
+#sudo npm install -g react-native-cli
+#sudo npm install -g flow-bin
+

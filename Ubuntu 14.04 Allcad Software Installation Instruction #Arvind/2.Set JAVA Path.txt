@@ -1,0 +1,38 @@
+NOte !!!  Thursday 12 January 2017 03:36:52 PM IST 
+
+You have to change you username !!! here above is user6 !!!
+You have to change your extrated folder location of JAVA !!! here above is /home/user6/software/jdk1.8.0_111 !!!
+
+
+Step 1
+edite profile
+#sudo gedit /etc/profile
+
+type past bleow lines
+
+JAVA_HOME=/home/user6/software/jdk1.8.0_111
+JRE_HOME=/home/user6/software/jdk1.8.0_111/jre
+PATH=$PATH:$JRE_HOME/bin:$JAVA_HOME/bin
+export JAVA_HOME
+export JRE_HOME
+export PATH
+
+Step 2
+run below command after extrat your java /home/user12/software/
+Note =
+Your java extrated location /home/user64/software/jdk1.8.0_111
+
+Run blow command in sudo mode for say ubuntu where is your java installed/extrated file
+
+sudo update-alternatives --install "/usr/bin/java" "java" "/home/user6/software/jdk1.8.0_111/bin/java" 1 
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/home/user6/software/jdk1.8.0_111/bin/javac" 1 
+sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/home/user6/software/jdk1.8.0_111/bin/javaws" 1 
+sudo update-alternatives --set java /home/user6/software/jdk1.8.0_111/bin/java 
+sudo update-alternatives --set javac /home/user6/software/jdk1.8.0_111/bin/javac	 
+sudo update-alternatives --set javaws /home/user6/software/jdk1.8.0_111/bin/javaws 
+
+
+
+
+
+

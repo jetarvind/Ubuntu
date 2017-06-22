@@ -1,0 +1,7 @@
+#sudo apt-get install aptitude
+#sudo aptitude --purge reinstall linux-sound-base alsa-base alsa-utils linux-image-`uname -r` linux-ubuntu-modules-`uname -r` libasound2
+
+
+
+And Reboot Your Computer
+#Arvind

@@ -1,0 +1,12 @@
+To install maven
+#sudo apt-get install maven
+
+to check version
+#mvn -version
+
+
+
+The Maven configuration files are stored in /etc/maven
+
+Where is Maven installed?
+The command apt-get install the Maven in /usr/share/maven

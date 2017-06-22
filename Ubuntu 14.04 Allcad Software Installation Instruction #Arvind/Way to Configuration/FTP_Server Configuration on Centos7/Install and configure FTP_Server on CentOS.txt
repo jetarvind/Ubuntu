@@ -1,0 +1,96 @@
+https://www.unixmen.com/install-configure-ftp-server-centos-7/
+
+Install vsftpd
+
+yum install vsftpd ftp -y
+
+
+Configure vsftpd
+
+Edit vsftpd configuration file /etc/vsftpd/vsftpd.conf,
+
+vi /etc/vsftpd/vsftpd.conf
+Find the following lines and make the changes as shown below:
+
+ [...]
+## Disable anonymous login ##
+anonymous_enable=NO
+
+## Uncomment ##
+ascii_upload_enable=YES
+ascii_download_enable=YES
+
+## Uncomment - Enter your Welcome message - This is optional ##
+ftpd_banner=Welcome to UNIXMEN FTP service.
+
+## Add at the end of this  file ##
+use_localtime=YES
+
+
+Enable and start the vsftpd service:
+
+systemctl enable vsftpd
+systemctl start vsftpd
+
+
+
+Allow the ftp service and port 21 via firewall.
+
+firewall-cmd --permanent --add-port=21/tcp
+firewall-cmd --permanent --add-service=ftp
+Restart firewall:
+
+firewall-cmd --reload
+Then, update the SELinux boolean values for FTP service:
+
+setsebool -P ftp_home_dir on
+
+
+
+
+Create FTP users
+
+By default, root user is not allowed to login to ftp server for security purpose. So, let us create a normal testing user called “sk” with password “centos”.
+
+useradd sk
+passwd sk
+Connecting to FTP server
+
+Now, try to connect to FTP server itself with user “sk”:
+
+ftp 192.168.1.101
+Enter the ftp user name and password.
+
+Sample Output:
+
+Connected to 192.168.1.101 (192.168.1.101).
+220 Welcome to UNIXMEN FTP service.
+Name (192.168.1.101:root): sk
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp>
+
+Congratulations!! you will be able to login to FTP server without any problems.
+
+
+
+
+
+
+http://www.ducea.com/2006/07/27/allowing-ftp-access-to-files-outside-the-home-directory-chroot/
+
+
+
+
+
+add user in root groups
+
+[root@zabbix ftpuser]# usermod -a -G root ftpuser
+[root@zabbix ftpuser]# groups ftpuser
+ftpuser : ftpuser root
+[root@zabbix ftpuser]# sudo chmod -R g+w foldername/
+[root@zabbix ftpuser]# sudo chmod -R g+w /home/ftpuser/foldername/
+[root@zabbix ftpuser]#

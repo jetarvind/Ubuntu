@@ -1,0 +1,41 @@
+1. Assign IP with your local DNS Server
+2. Install openssh Server
+3. Configure Date / Time / Time Zone
+4. Change Hostname
+5. Change Hosts file
+    sudo date --set "09 Apr 2015 15:00:00"
+
+
+6. sudo apt-get update
+7. sudo apt-get upgrade
+8. sudo apt-get dist-upgrade
+9. wget http://download.beyondtrust.com/PBISO/8.0.1/linux.deb.x64/pbis-open-8.0.1.2029.linux.x86_64.deb.sh
+10. sudo bash pbis-open-8.0.1.2029.linux.x86_64.deb.sh
+	NO
+	Yes
+11. sudo /opt/pbis/bin/domainjoin-cli join allcad.home administrator
+12. sudo /opt/pbis/bin/config UserDomainPrefix ALLCAD.HOME
+13. sudo /opt/pbis/bin/config AssumeDefaultDomain true
+14. sudo /opt/pbis/bin/config LoginShellTemplate /bin/bash
+15. sudo /opt/pbis/bin/config HomeDirTemplate %H/%U
+16. sudo nano /etc/pam.d/common-session
+	Replace Line
+	" session sufficient pam_lsass.so "
+	TO
+	" session [success=ok default=ignore] pam_lsass.so "
+17. sudo nano /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
+	[SeatDefaults]
+	greeter-session=unity-greeter
+	greeter-hide-users=true
+	allow-guest=false
+	greeter-show-remote-login=false
+	greeter-show-manual-login=true
+18. Change user password
+
+
+
+groups: cannot find name for group ID 834667009
+groups: cannot find name for group ID 834667667
+I have no name!@pc05:~$ 
+
+

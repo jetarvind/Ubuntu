@@ -1,0 +1,31 @@
+
+Error 403
+New XAMPP security concept:
+Access to the requested object is only available from the local network.
+This setting can be configured in the file "httpd-xampp.conf".
+
+Steps 1 !!!
+Goto 
+#sudo nano/gedit //opt/lampp/etc/extra/httpd-xampp.conf
+
+Step 2 !!!
+Edit below line
+
+Alias /phpmyadmin "/opt/lampp/phpmyadmin"
+Alias /phpsqliteadmin "/opt/lampp/phpsqliteadmin"
+
+# since XAMPP 1.4.3
+<Directory "/opt/lampp/phpmyadmin">
+   AllowOverride AuthConfig Limit
+   Order allow,deny
+   Allow from all
+   Require all granted
+</Directory>
+
+<Directory "/opt/lampp/phpsqliteadmin">
+     AllowOverride AuthConfig Limit
+     Order allow,deny
+     Allow from all
+     Require all granted
+</Directory>
+

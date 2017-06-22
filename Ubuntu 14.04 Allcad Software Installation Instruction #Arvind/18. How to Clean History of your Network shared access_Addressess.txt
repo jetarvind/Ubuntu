@@ -1,0 +1,6 @@
+
+
+!!! you have to just clean this file.
+
+
+sudo gedit ~/.config/nautilus/servers

@@ -1,0 +1,7 @@
+To restart zabbix server
+
+service zabbix-server restart
+
+To restart webservice
+
+service https restart

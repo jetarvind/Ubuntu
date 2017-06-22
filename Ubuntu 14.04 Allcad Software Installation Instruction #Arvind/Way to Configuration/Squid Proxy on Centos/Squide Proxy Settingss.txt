@@ -1,0 +1,85 @@
+ 
+Most of command to that use after zabbix_server restart 
+ 	systemctl restart zabbix.service
+ 	systemctl start  squid.service
+ 	systemctl start snmpd.service
+
+
+Squid_proxy file location
+
+	vi /etc/squid/squid.conf
+
+
+
+Configure Squid to Start on Boot
+and then start Squid:
+
+	systemctl start squid
+
+
+Be sure that Squid starts at boot:
+
+	systemctl enable squid
+
+
+To check the status of Squid:
+
+	systemctl status squid
+
+
+To stop Squid:
+
+	systemctl stop squid
+
+Step 0:
+
+Start squid service and make it available on startup.
+
+service squid start
+chkconfig squid on
+
+
+step 0:
+change here below 
+
+	vi /etc/squid/squid.conf
+
+
+# Recommended minimum configuration:
+#
+
+# Example rule allowing access from your local networks.
+# Adapt to list your (internal) IP networks from where browsing
+# should be allowed
+acl localnet src 10.0.0.0/8     # RFC1918 possible internal network
+acl localnet src 172.16.0.0/12  # RFC1918 possible internal network
+acl localnet src 192.168.5.0/24 # RFC1918 possible internal network
+acl localnet src fc00::/7       # RFC 4193 local private network range
+acl localnet src fe80::/10      # RFC 4291 link-local (directly plugged) machines
+#main command that allow to open only specific websites.
+
+acl GOOD dst allcad.intervalsonline.com be19.https.cdn.softlayer.net www.google-analytics.com w0.s.myintervals.com repo1.maven.org repo.maven.apache.org mvnrepository.com 192.168.5.0/24
+
+http_access allow GOOD
+http_access deny all
+
+
+
+
+Step 1:
+
+Add firewall rule to allow squid 3128 port.
+
+firewall-cmd –zone=public –add-port=3128/tcp –permanent
+ 
+
+Save rules and restart service
+
+firewall-cmd –reload
+Done configuration part now time to test browsing pointing squid ip and default port in client browser.
+
+ 
+
+Step 2:
+
+Open up firefox browser and go to Tools > Options > Advance tab > Network > Settings > select manual proxy settings radio button and provide squid server IP 192.168.1.100 and port 3128 and check use this use this proxy server for all protocols and then click oK

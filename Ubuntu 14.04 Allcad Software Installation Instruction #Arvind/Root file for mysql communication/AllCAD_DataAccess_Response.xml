@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataAccessInfo>
+
+<runtimeError>
+<errorName>ERROR_IN_IDENTIFIER_GENERATION</errorName>
+<className>org.hibernate.id.IdentifierGenerationException</className>
+<errorMessage><![CDATA[<span style='font-family : Monotype Corsiva ; font-size:14pt'>Error while generating database record primary key.</span>]]></errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>CONSTRAINT_VIOLATION_ERROR</errorName>
+<className>org.hibernate.exception.ConstraintViolationException</className>
+<errorMessage>Data is violating database rules</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>DATA_ERROR</errorName>
+<className>org.hibernate.exception.DataException</className>
+<errorMessage>Functional operation error on database resultset</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>DATABASE_CONNECTION_ERROR</errorName>
+<className>org.hibernate.exception.JDBCConnectionException</className>
+<errorMessage>Error in connceting database, please check your database credential and database existence.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>ERROR_IN_ACQUIRING_DB_LOCK</errorName>
+<className>org.hibernate.exception.LockAcquisitionException</className>
+<errorMessage>Could not obtain database lock.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>QUERY_TIMEOUT_ERROR</errorName>
+<className>org.hibernate.QueryTimeoutException</className>
+<errorMessage>Query could not execute , it's execution timed out.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>SQL_SYNTAX_ERROR</errorName>
+<className>org.hibernate.exception.SQLGrammarException</className>
+<errorMessage>Error in sql queries.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>ERROR_IN_FETCHING_ASSOCIATED_ENTITY</errorName>
+<className>org.hibernate.LazyInitializationException</className>
+<errorMessage>Error while fetching associated entity.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>PROPERTY_ACCESS_ERROR</errorName>
+<className>org.hibernate.PropertyAccessException</className>
+<errorMessage>Error while accessing property at runtime.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>PROPERTY_VALUE_ERROR</errorName>
+<className>org.hibernate.PropertyValueException</className>
+<errorMessage>Value of some properties are not as per database table rules.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>ERROR_IN_QUERY</errorName>
+<className>org.hibernate.QueryException</className>
+<errorMessage>Query could not be translated due to syntax error.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>CONFLICT_ERROR_IN_UPDATE</errorName>
+<className>org.hibernate.StaleStateException</className>
+<errorMessage>Someone has already modified data that you are trying to modify.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>TRANSIENT_OBJECT_ERROR</errorName>
+<className>org.hibernate.TransientObjectException</className>
+<errorMessage>Data could not be save/update because some property are marked as transient.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>TRANSIENT_PROPERTY_VALUE_ERROR</errorName>
+<className>org.hibernate.TransientPropertyValueException</className>
+<errorMessage>Save/Update failed because some property is not being saved before passing as reference to another place.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>TYPE_MISMATCH_ERROR</errorName>
+<className>org.hibernate.TypeMismatchException</className>
+<errorMessage>User data type and table property definition for some property are mismatching.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>UNRESOLVABLE_OBJECT_ERROR</errorName>
+<className>org.hibernate.UnresolvableObjectException</className>
+<errorMessage>Hibernate could not resolve some object by their id.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>SESSION_ERROR</errorName>
+<className>org.hibernate.SessionException</className>
+<errorMessage>Error occured while getting hibernate session.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>TRANSACTION_ERROR</errorName>
+<className>org.hibernate.TransactionException</className>
+<errorMessage>Error thrown while transactioning to database.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>RUNTIME_ERROR</errorName>
+<className>java.lang.Exception</className>
+<errorMessage>Unknown runtime error, please send the error scenario description to support@allcadservices.com.</errorMessage>
+</runtimeError>
+
+</dataAccessInfo>

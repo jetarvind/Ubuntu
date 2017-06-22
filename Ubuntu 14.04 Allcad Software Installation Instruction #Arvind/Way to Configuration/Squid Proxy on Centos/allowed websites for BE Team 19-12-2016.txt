@@ -1,0 +1,5 @@
+allowed user for Backend Team
+
+
+
+acl GOOD dst allcad.intervalsonline.com be19.https.cdn.softlayer.net www.google-analytics.com api.myintervals.com 192.168.5.0/24

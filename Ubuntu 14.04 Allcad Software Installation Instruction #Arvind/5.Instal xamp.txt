@@ -1,0 +1,83 @@
+Note !!!
+Download XAMPP for ubuntu 14.04 or accroding your OS 
+and Run the following command to make it executable 
+NOte !!!
+You can skill Step 4
+
+Step 1
+Give permission to .run file
+#sudo chmod +x xampp-linux-x64-5.6.12-0-installer.run
+
+Step 2
+To Install Xampp.Run the below command  in terminal
+#sudo ./xampp-linux-x64-5.6.12-0-installer.run
+
+After Few seconds a Pop-up Window will open . Install the xampp by clicking Next & Finish buttons when required.
+Once installaition is done .It will be installed in /opt/lampp directory. 
+
+Step 3
+Now you can start Xampp services using the following command.
+
+#sudo /opt/lampp/lampp start/stop/restart
+and type your user password
+
+Now you can set xamp on search box
+
+Steps 4
+! Open terminal and login as root user using the root password.
+$ su root
+
+!! Now create xampp-control-panel folder under /usr/local/
+#mkdir /usr/local/xampp-control-panel
+
+
+!!! Now create one script file under the xampp-control-panel folder named as xampp-control-panel.sh
+# vi /usr/local/xampp-control-panel/xampp-control-panel.sh
+      [ copy and paste the below two lines in that script file ]
+      #/bin/sh
+      sudo /opt/lampp/share/xampp-control-panel/xampp-control-panel
+
+
+
+!V Now save that file by pressing esc :wq
+
+V Give 755 permission to that script file.
+# chmod 755 /usr/local/xampp-control-panel/xampp-control-panel.sh
+
+
+
+V! Create desktop file named as xampp.desktop under /usr/share/applications/
+    # vi /usr/share/applications/xampp.desktop
+      [ copy and paste the below lines in the xampp.desktop file ]
+      [Desktop Entry]
+      Encoding=UTF-8
+      Name=Start/Stop XAMPP
+      Comment=Launch XAMPP Control Panel
+      Exec=/usr/local/xampp-control-panel/xampp-control-panel.sh
+      Terminal=true
+      Type=Application
+      Icon=/opt/lampp/htdocs/favicon.ico
+      Categories=Development;
+      MimeType=application/xampp;
+
+Now save the file by pressing esc :wq
+
+Step 5
+Now Edit /etc/sudoers file to allow the users to start the xampp control panel alone with asking password with domainuser.
+#gedit /etc/sudoers
+
+    [ In that file you can see the line root    ALL=(ALL:ALL) ALL. Just add the below line next to that line ]
+
+
+"yourdomain"\\"yourdomainusername"	ALL=/your file location of xampp/*
+
+!Example!
+ALLCAD\\user44	 	ALL=/opt/lampp/*
+	 
+!X Replace the username by actual username which you want to give access. If you don't know the username just type cd /home/ as root user in terminal and type ls command. It shows all the usernames which you have created in that system.
+
+Now save the file 
+
+auto start xamp
+http://www.computernetworkingnotes.com/ubuntu-12-04-tips-and-tricks/how-to-start-xampp-automatically-in-ubuntu.html
+

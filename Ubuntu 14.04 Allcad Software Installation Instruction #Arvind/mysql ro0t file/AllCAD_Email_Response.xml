@@ -1,0 +1,174 @@
+<sendEmailInfo>
+<!-- 1. Mandatory input error messages -->
+<validationError>
+<errorName>FROM_ADDRESS_MISSING</errorName>
+<errorMessage>FROM email address is mandatory and it cannot be left blank.</errorMessage>
+</validationError>
+
+<validationError>
+<errorName>TO_ADDRESS_MISSING</errorName>
+<errorMessage>TO email address is mandatory and it cannot be left blank.</errorMessage>
+</validationError>
+
+<validationError>
+<errorName>SMTP_HOST_MISSING</errorName>
+<errorMessage>SMTP host name is mandatory and can not be left blank. Please contact your IT manager for all SMTP detail, or if you are using Outlook then you can found this setting in File/Info/Account setting/email TAB and double click on account to view the detail</errorMessage>
+</validationError>
+
+<validationError>
+<errorName>SMTP_PORT_MISSING</errorName>
+<errorMessage>SMTP Port no is mandatory and can not be left blank.Please contact your IT manager for all SMTP detail, or if you are using Outlook then you can found this setting in File/Info/Account setting/email TAB and double click on account to view the detail</errorMessage>
+</validationError>
+
+<validationError>
+<errorName>SMTP_USER_NAME_MISSING</errorName>
+<errorMessage>SMTP user name is mandatory and it cannot be left blank.Please contact your IT manager for all SMTP detail, or if you are using Outlook then you can found this setting in File/Info/Account setting/email TAB and double click on account to view the detail.</errorMessage>
+</validationError>
+
+<validationError>
+<errorName>SMTP_PASSWORD_MISSING</errorName>
+<errorMessage>SMTP password is mandatory and it cannot be left blank.Please contact your IT manager for all SMTP detail, or if you are using Outlook then you can found this setting in File/Info/Account setting/email TAB and double click on account to view the detail.</errorMessage>
+</validationError>
+
+<validationError>
+<errorName>SENDER_NAME_NON_ALFA_NUMERIC_ERROR</errorName>
+<errorMessage>EMAIL SENDER NAME must be only alpha numeric. you need to update your email address book or email address SENDER NAME, which is been used to send the email by removing all special characters except alpha numeric charactors.</errorMessage>
+</validationError>
+<!-- Mandatory input error messages -->
+
+<!-- 2. Validation constraint data range and corresponding error responses -->
+<dataConstraintError>
+<minimumRange>1</minimumRange>
+<maximumRange>1</maximumRange>
+<errorName>EXCESS_OF_FROM_ADDRESS_LIMIT</errorName>
+<errorMessage>FROM EMAIL Address must be single (modified), please remove any extra detail or addresses you have typed in as FROM EMAIL Address data.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>1</minimumRange>
+<maximumRange>1</maximumRange>
+<errorName>EXCESS_OF_BOUNCE_ADDRESS_LIMIT</errorName>
+<errorMessage>BOUNCE EMAIL address must be single. please remove any extra detail or addresses you have typed in as FROM EMAIL Address data.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>0</minimumRange>
+<maximumRange>10</maximumRange>
+<errorName>EXCESS_OF_TO_ADDRESS_LIMIT</errorName>
+<errorMessage>Total number of TO EMAIL address can not be more than specified limit in xml file. Please contact your IT Manager or System Administrator to update TO EMAIL address number limit if needed.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>0</minimumRange>
+<maximumRange>10</maximumRange>
+<errorName>EXCESS_OF_CC_ADDRESS_LIMIT</errorName>
+<errorMessage>Total number of CC EMAIL address can not be more than specified limit in xml file. Please contact your IT Manager or System Administrator to update CC EMAIL address number limit if needed.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>0</minimumRange>
+<maximumRange>10</maximumRange>
+<errorName>EXCESS_OF_BCC_ADDRESS_LIMIT</errorName>
+<errorMessage>Total number of BCC EMAIL address can not be more than specified limit in xml file. Please contact your IT Manager or System Administrator to update BCC EMAIL address number limit if needed.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>3</minimumRange>
+<maximumRange>60</maximumRange>
+<errorName>SUBJECT_LENGTH_ERROR</errorName>
+<errorMessage>EMAIL SUBJECT length can not be less than or greater than specified limit in xml file. Please contact your IT Manager or System Administrator to update EMAIL SUBJECT length limit if needed.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>0</minimumRange>
+<maximumRange>40</maximumRange>
+<errorName>SENDER_NAME_MAX_LENGTH_ERROR</errorName>
+<errorMessage>EMAIL SENDER NAME length can not be greater than specified limit in xml file. Please contact your IT Manager or System Administrator to update EMAIL SENDER NAME length limit if needed.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>10</minimumRange>
+<maximumRange>50</maximumRange>
+<errorName>SMTP_ADD_LENGTH_ERROR</errorName>
+<errorMessage>SMTP ADDRESS length can not be less than or greater than specified limit in xml file. Please contact your IT Manager or System Administrator to update SMTP ADDRESS length limit if needed.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>2</minimumRange>
+<maximumRange>30</maximumRange>
+<errorName>USER_NAME_LENGTH_ERROR</errorName>
+<errorMessage>SMTP USER NAME length can not be less than or greater than specified limit in xml file. Please contact your IT Manager or System Administrator to update SMTP USER NAME length limit if needed.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>6</minimumRange>
+<maximumRange>30</maximumRange>
+<errorName>PASSWORD_LENGTH_ERROR</errorName>
+<errorMessage>SMTP USER PASSWORD length can not be less than or greater than specified limit in xml file. Please contact your IT Manager or System Administrator to update SMTP USER PASSWORD length limit if needed.</errorMessage>
+</dataConstraintError>
+
+<!-- Note :- Attachment size limit is considerable only in KB , hence please mention limit in KB-->
+<dataConstraintError>
+<minimumRange>10</minimumRange>
+<maximumRange>10000</maximumRange>
+<errorName>EXCESS_OF_ATTACHMENTS_TOTAL_LIMIT</errorName>
+<errorMessage>Total FILE SIZE of ATTACHMENT can not be less than or more than specified limit in xml file. Please contact your IT Manager or System Administrator to update SFILE SIZE of ATTACHMENT limit if needed.</errorMessage>
+</dataConstraintError>
+
+<dataConstraintError>
+<minimumRange>25</minimumRange>
+<maximumRange>1000</maximumRange>
+<errorName>SMTP_PORT_NO_OUT_OF_RANGE</errorName>
+<errorMessage>SMTP PORT NUMBER must be between 25 and 1000 both are included. Please contact your IT Manager or System Administrator to update SMTP PORT NUMBER limit if needed.</errorMessage>
+</dataConstraintError>
+
+<!-- 3. Runtime email error responses -->
+
+<runtimeError>
+<errorName>SMTP_WRONG_CREDENTIAL</errorName>
+<className>javax.mail.AuthenticationFailedException</className>
+<errorMessage>SMTP User name or password is wrong, please use valid SMTP User name and password.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>SMTP_UNKNOWN_HOST</errorName>
+<className>java.net.UnknownHostException</className>
+<errorMessage>SMTP host name is incorrect, please correct SMTP host name.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>SMTP_WRONG_PORT_NO</errorName>
+<className>java.net.ConnectException</className>
+<errorMessage>SMTP port number is invalid, please correct SMTP port number.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>INVALID_EMAIL_ADDRESS</errorName>
+<className>com.sun.mail.smtp.SMTPAddressFailedException</className>
+<errorMessage>Below EMAIL ADDRESSES are incorrect or invalid. Please correct valid email address example abc@gmail.com.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>INVALID_ATTACHMENT_PATH</errorName>
+<className>java.io.IOException</className>
+<errorMessage>ATTACHMENT FILE NAME or it's path is incorrect.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>ERROR_IN_DATA_SOURCE</errorName>
+<className>javax.mail.internet.ParseException</className>
+<errorMessage>MIME type of ATTACHMENT is not recognizable. MIME Type attachment is not possible, avoid to use this attachment.</errorMessage>
+</runtimeError>
+
+<runtimeError>
+<errorName>RUNTIME_ERROR</errorName>
+<className>java.lang.Exception</className>
+<errorMessage>Unknown runtime error, please send the error scenario description to support@allcadservices.com.</errorMessage>
+</runtimeError>
+
+<generalMessage>
+<name>EMAIL_SENT_SUCCESS</name>
+<message>Email has been sent successfully, There can be bounce email message in your junk folder. Please check accordingly.</message>
+</generalMessage>
+
+</sendEmailInfo>

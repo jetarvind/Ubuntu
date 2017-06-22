@@ -1,0 +1,7 @@
+START VNC OVER UBUNTU SERVER
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-14-04
+
+sudo service vncserver start
+
+
