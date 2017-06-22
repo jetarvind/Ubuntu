@@ -1,5 +1,5 @@
 allcad@proman:~$ cat /etc/apache2/sites-available/proman.allcad.home.conf 
-<VirtualHost proman.allcad.home:80>
+<VirtualHost arv.home:80>
 	# The ServerName directive sets the request scheme, hostname and port that
 	# the server uses to identify itself. This is used when creating
 	# redirection URLs. In the context of virtual hosts, the ServerName
@@ -10,7 +10,7 @@ allcad@proman:~$ cat /etc/apache2/sites-available/proman.allcad.home.conf
 	#ServerName www.example.com
 
 	ServerAdmin webmaster@localhost
-	ServerName proman.allcad.home
+	ServerName arv.home
 	DocumentRoot /var/www/proman/dev/manual
 
 	# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
