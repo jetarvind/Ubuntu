@@ -1,0 +1,10 @@
+When you see error after start your Ubuntu 14.04.
+"The System is running low Graphics mode"
+Steps below to resolve your issue.
+Press Ctrl+Alt+F2
+Type you root user name and password then
+$sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
+$sudo apt-get install --reinstall ubuntu-desktop
+$sudo dpkg-reconfigure lightdm
+$sudo reboot..
+Here we done problem resolved.
