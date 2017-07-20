@@ -1,0 +1,27 @@
+Your Installation CD-ROM couldn’t be mounted. 
+Option 1
+
+Ctrl+Alt+F2
+#df -h
+#umount /dev/sdb1
+#mount /dev/sdb1 /cdrom
+
+
+
+Option 2
+
+Unplug your USB from system and Re-insert it
+Wait for Mount/ Detection (USB LED glow)
+Click Continue
+
+
+Option 3
+
+Open a second console with Alt-F2 (get back to the installation dialogue with Alt-F1 later)
+Press enter to activate it
+Enter the following command to make /cdrom a softlink to /media:
+
+#rmdir /cdrom; ln -s media /cdrom
+
+Go back to the installation process with Alt-F1
+Answer ‘yes’ to the question Retry mounting the CD-ROM?
